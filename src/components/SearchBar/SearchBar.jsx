@@ -9,10 +9,9 @@ const SearchBar = ({ onSearch }) => {
     onSearch(searchQuery);
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleSearch();
-    }
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
+    onSearch(event.target.value);
   };
 
   return (
@@ -22,8 +21,7 @@ const SearchBar = ({ onSearch }) => {
         <input
           type="text"
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onChange={handleChange}
           placeholder="Search"
         />
       </div>
