@@ -1,17 +1,24 @@
 .dashboard {
-  .title{
+  .title {
     font-size: 15px;
     margin-bottom: 5px;
     margin-left: 12px;
   }
-  .heading-inner{
-    font-size: 20px; 
+
+  .heading-inner {
+    font-size: 20px;
     font-weight: bold;
   }
 
   .movie-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr); /* Display one card per row on mobile */
     grid-gap: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .movie-list {
+      grid-template-columns: repeat(4, 1fr); /* Display four cards per row on larger screens */
+    }
   }
 }
