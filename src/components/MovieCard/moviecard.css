@@ -1,8 +1,9 @@
 .movie-card {
     border-radius: 8px;
     padding: 16px;
-    margin-bottom: 10px;
-    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .image-container {
@@ -14,6 +15,7 @@
     height: auto;
     border-radius: 8px;
   }
+  
   
   .view-button {
     position: absolute;

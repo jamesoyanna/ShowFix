@@ -1,60 +1,13 @@
 .dashboard {
-  .search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
   .heading {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
   }
 
-  .search-input {
-    display: flex;
-    align-items: center;
-    background-color: #eff0f6;
-    border-radius: 8px;
-    padding: 4px;
-  }
-
-  .search-icon {
-    margin-right: 8px;
-    margin-left: 12px;
-    color: #53535b; 
-    height: 24px; 
-    width: 24px; 
-  }
-
-  .search-bar input {
-    flex: 1;
-    padding: 10px;
-    height: 25px;
-    width: 600px; 
-    font-size: 16px;
-    border: none;
-    background-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    outline: none;
-    color: #a0a3bd; 
-  }
-
-  .search-button {
-    margin-left: 10px;
-    width: 170px;
-    height: 50px;
-    line-height: 40px;
-    background-color: #5f2eea;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
   }
 }
