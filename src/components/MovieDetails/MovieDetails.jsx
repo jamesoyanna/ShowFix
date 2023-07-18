@@ -1,39 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './moviedetails.css';
 
-const MovieDetails = () => {
+const MovieDetails = ({ movie }) => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
 
-
-  const dummyMovieData = {
-    id: '123',
-    title: 'Example Movie',
-    releaseYear: '2023',
-    description: 'This is an example movie description.',
-    genre: 'Triller',
-  };
-  
-
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setMovieDetails(dummyMovieData);
+      setMovieDetails(movie);
     }, 1000);
-  
+
     // Cleanup the timeout on component unmount
     return () => clearTimeout(timeout);
   }, [id]);
-  
 
   return (
-    <div>
+    <div className="movie-details">
       <h2>Movie Details</h2>
       {movieDetails ? (
-        <div>
-          <h3>{movieDetails.title}</h3>
-          <p>{movieDetails.description}</p>
-          <p>{movieDetails.genre}</p>
-          <Link to="/">Back</Link>
+        <div className="movie-card">
+          <div className="image-container">
+            <img src={movie.image} alt={movie.title} className="cover-image" />
+            <button className="view-button">
+              <Link to={`/movie/${movie.id}`} className="view-link">View</Link>
+            </button>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>
