@@ -9,6 +9,12 @@ const SearchBar = ({ onSearch }) => {
     onSearch(searchQuery);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="search-bar">
       <div className="search-input">
@@ -17,6 +23,7 @@ const SearchBar = ({ onSearch }) => {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyPress={handleKeyPress}
           placeholder="Search"
         />
       </div>
