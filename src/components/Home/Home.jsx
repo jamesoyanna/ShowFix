@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchMovies } from '../actions/moviesActions';
+import { fetchMovies } from '../../actions/moviesActions';
 import MovieCard from '../MovieCard/MovieCard';
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = useState('');
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies);
 
-  const handleSearch = () => {
-    dispatch(searchMovies(searchQuery));
-  };
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
 
   return (
     <div>
       <h1>ShowFlix</h1>
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-
       {movies.loading ? (
         <p>Loading...</p>
       ) : movies.error ? (

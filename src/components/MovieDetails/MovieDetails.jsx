@@ -11,15 +11,11 @@ const MovieDetails = () => {
     title: 'Example Movie',
     releaseYear: '2023',
     description: 'This is an example movie description.',
-    genre: 'Action',
+    genre: 'Triller',
   };
   
 
   useEffect(() => {
-    // Simulate fetching movie details from the OMDB API
-    // Replace this code with the actual API call
-  
-    // setTimeout to simulate API call delay
     const timeout = setTimeout(() => {
       setMovieDetails(dummyMovieData);
     }, 1000);
