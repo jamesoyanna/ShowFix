@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import './searchbar.css'
+import './searchbar.css';
+
 const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
 

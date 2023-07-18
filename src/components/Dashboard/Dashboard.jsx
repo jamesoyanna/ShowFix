@@ -15,7 +15,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <h1 className="heading">Explore</h1>
       <SearchBar onSearch={handleSearch} />
-      <h3 className="heading">Results for <b>Mortal Kombart</b></h3>
+      <p className="title">Results for <span className='heading-inner'>Mortal Kombart</span></p>
       <div className="movie-list">
         {movies.loading ? (
           <p>Loading...</p>
