@@ -30,6 +30,9 @@ const Dashboard = () => {
           Search
         </button>
       </div>
+    
+    <h3 className="heading">Results for <b>Mortal Kombart</b></h3>
+     {/* </div> */}
       <div className="movie-list">
         {movies.loading ? (
           <p>Loading...</p>
