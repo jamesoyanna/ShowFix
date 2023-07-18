@@ -8,9 +8,8 @@ import Movie6Image from '../images/mov.png';
 import Movie7Image from '../images/mov1.png';
 import Movie8Image from '../images/mov.png';
 
-// Define a dummy action creator to fetch movies
 export const fetchMovies = createAsyncThunk('movies/fetchMovies', async () => {
-  // Replace this code with the actual API call
+
   return [
     { id: '1', title: 'Movie 1', image: Movie1Image, description: 'Movie3'},
     { id: '2', title: 'Movie 2', image: Movie2Image, description: 'Movie5' },

@@ -1,4 +1,3 @@
-// src/reducers/moviesReducer.js
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchMovies } from '../actions/moviesActions';
 
