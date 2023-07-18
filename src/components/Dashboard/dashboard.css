@@ -12,13 +12,13 @@
 
   .movie-list {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Display one card per row on mobile */
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 16px;
   }
 
   @media (min-width: 768px) {
     .movie-list {
-      grid-template-columns: repeat(4, 1fr); /* Display four cards per row on larger screens */
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

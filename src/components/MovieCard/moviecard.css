@@ -1,8 +1,7 @@
 .movie-card {
     border-radius: 8px;
     padding: 16px;
-    margin-bottom: 20px;
-    width: 100%;
+    margin-left: 10px; 
     box-sizing: border-box;
   }
   
@@ -16,10 +15,9 @@
     border-radius: 8px;
   }
   
-  
   .view-button {
     position: absolute;
-    bottom: 23px; 
+    bottom: 23px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #d9dbe9;
