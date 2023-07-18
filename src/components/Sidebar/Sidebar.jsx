@@ -13,7 +13,7 @@ const Sidebar = () => {
       </div>
       <div className="search-bar">
         <div className="search-input">
-          <FiSearch className="search-icon" />
+          <FiSearch className="sidebar-icon" />
           <input type="text" placeholder="Search" />
         </div>
       </div>
