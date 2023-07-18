@@ -1,0 +1,43 @@
+.movie-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal size */
+    grid-gap: 16px; /* Adjust the gap between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .view-button {
+    background-color: #d9dbe9;
+    color: #14142b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.75px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .view-button:hover {
+    background-color: #c3c5d3;
+  }
+  
+  .view-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
