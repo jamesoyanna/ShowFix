@@ -10,6 +10,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 .logo-hire {
   color: #5f2eea;
   font-family: 'Poppins', sans-serif;

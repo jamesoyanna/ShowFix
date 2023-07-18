@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import MovieDetailsSlider from '../MovieDetailsSlider/MovieDetailsSlider';
+import placeholderImage from '../../images/mov.png';
 import './moviecard.css';
 
 const MovieCard = ({ movie }) => {
@@ -14,11 +14,13 @@ const MovieCard = ({ movie }) => {
     setIsSliderOpen(false);
   };
 
+  const imageSource = movie.image ? movie.image : placeholderImage;
+
   return (
     <>
       <div className="movie-card">
         <div className="image-container">
-          <img src={movie.image} alt={movie.title} className="cover-image" />
+          <img src={imageSource} alt={movie.title} className="cover-image" />
           <button className="view-button" onClick={handleSliderOpen}>
             View
           </button>
