@@ -2,12 +2,19 @@ import React, { useState } from 'react';
 import MovieDetailsSlider from '../MovieDetailsSlider/MovieDetailsSlider';
 import placeholderImage from '../../images/mov.png';
 import './moviecard.css';
+import MovieDetails from '../MovieDetails/MovieDetails';
+import { useDispatch } from 'react-redux';
+import { fetchMovieDetails } from '../../actions/moviesActions';
 
 const MovieCard = ({ movie }) => {
   const [isSliderOpen, setIsSliderOpen] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const dispatch = useDispatch();
 
-  const handleSliderOpen = () => {
+  const handleSliderOpen = async () => {
     setIsSliderOpen(true);
+    setSelectedMovie(movie);
+    await dispatch(fetchMovieDetails(movie.id));
   };
 
   const handleSliderClose = () => {
@@ -26,7 +33,9 @@ const MovieCard = ({ movie }) => {
           </button>
         </div>
       </div>
-      <MovieDetailsSlider onClose={handleSliderClose} isOpen={isSliderOpen} />
+      <MovieDetailsSlider onClose={handleSliderClose} isOpen={isSliderOpen}>
+        {selectedMovie && <MovieDetails movie={selectedMovie} />}
+      </MovieDetailsSlider>
     </>
   );
 };

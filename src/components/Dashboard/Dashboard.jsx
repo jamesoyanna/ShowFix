@@ -22,6 +22,8 @@ const Dashboard = () => {
     setSearchQuery(query);
   };
 
+  console.log("Movies from Dashboard", movies)
+
   return (
     <div className="dashboard">
       <h1 className="heading">Explore</h1>

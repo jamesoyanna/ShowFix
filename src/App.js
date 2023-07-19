@@ -4,7 +4,6 @@ import store from './store';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import MovieDetails from './components/MovieDetails/MovieDetails';
-import MoviePage from './components/MoviePage/MoviePage';
 
 const App = () => {
   return (
@@ -12,7 +11,6 @@ const App = () => {
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
-          <Route path="/movies/:id" element={<MoviePage />} />
         </Routes>
     </Provider>
   );

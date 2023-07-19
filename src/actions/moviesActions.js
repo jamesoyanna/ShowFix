@@ -10,7 +10,14 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (searchQ
         id: movie.imdbID,
         title: movie.Title,
         image: movie.Poster !== 'N/A' ? movie.Poster : null,
-        description: movie.Type,
+        rated: movie.Rated,
+        released: movie.Released,
+        genre: movie.Genre,
+        director: movie.Director,
+        plot: movie.Plot,
+        language: movie.Language,
+        awards: movie.Awards,
+
       }));
       return movies;
     } else {
@@ -20,4 +27,16 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (searchQ
     throw new Error('Failed to fetch movies');
   }
 });
+
+export const fetchMovieDetails = createAsyncThunk('movies/fetchMovieDetails', async (movieId) => {
+  try {
+    const response = await axios.get(`http://www.omdbapi.com/?i=${movieId}&apikey=25d01e11`);
+    const { data } = response;
+    return data;
+  } catch (error) {
+    throw new Error('Failed to fetch movie details');
+  }
+  
+});
+
 
