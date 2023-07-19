@@ -35,9 +35,7 @@ const MovieDetailsSlider = ({ children, onClose, isOpen }) => {
   return (
     <div className={`movie-details-slider ${isOpen ? 'open' : ''}`}>
       <div className="slider-content" ref={sliderRef}>
-        <button className="close-button" onClick={onClose}>
-          Back
-        </button>
+       
         {children}
       </div>
     </div>
