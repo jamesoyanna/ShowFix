@@ -1,12 +1,11 @@
 import React from 'react';
 import './moviedetails.css';
 
-const MovieDetails = ({ selectedMovie }) => {
-
-  console.log("Movies I watch", selectedMovie)
+const MovieDetails = ({ selectedMovie ,onClose}) => {
 
   return (
     <div className="movie-details">
+     
     {selectedMovie && (
       <div className="movie-card">
         <div className="image-container">
@@ -17,7 +16,7 @@ const MovieDetails = ({ selectedMovie }) => {
         <p>{selectedMovie.released}</p>
         <p>{selectedMovie.genre}</p>
         <p>{selectedMovie.director}</p>
-        <p>{selectedMovie.plot}</p>
+        <h3>{selectedMovie.plot}</h3>
         <p>{selectedMovie.language}</p>
         <p>{selectedMovie.awards}</p>
         <button className="watch-button">Watch</button>

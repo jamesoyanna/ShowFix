@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import './moviedetailslider.css';
-// import MovieDetails from '../MovieDetails/MovieDetails';
 
 const MovieDetailsSlider = ({ children, onClose, isOpen }) => {
   const sliderRef = useRef(null);
@@ -36,7 +35,6 @@ const MovieDetailsSlider = ({ children, onClose, isOpen }) => {
   return (
     <div className={`movie-details-slider ${isOpen ? 'open' : ''}`}>
       <div className="slider-content" ref={sliderRef}>
-        {/* <MovieDetails /> */}
         <button className="close-button" onClick={onClose}>
           Back
         </button>

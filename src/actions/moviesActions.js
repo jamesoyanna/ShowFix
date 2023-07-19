@@ -6,19 +6,24 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (searchQ
     const response = await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=25d01e11&s=${searchQuery}`);
     const { data } = response;
     if (data.Response === 'True' && Array.isArray(data.Search)) {
-      const movies = data.Search.map((movie) => ({
-        id: movie.imdbID,
-        title: movie.Title,
-        image: movie.Poster !== 'N/A' ? movie.Poster : null,
-        rated: movie.Rated,
-        released: movie.Released,
-        genre: movie.Genre,
-        director: movie.Director,
-        plot: movie.Plot,
-        language: movie.Language,
-        awards: movie.Awards,
-
-      }));
+      const movies = await Promise.all(
+        data.Search.map(async (movie) => {
+          const movieResponse = await axios.get(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=25d01e11`);
+          const movieData = movieResponse.data;
+          return {
+            id: movie.imdbID,
+            title: movieData.Title,
+            image: movieData.Poster !== 'N/A' ? movieData.Poster : null,
+            rated: movieData.Rated,
+            released: movieData.Released,
+            genre: movieData.Genre,
+            director: movieData.Director,
+            plot: movieData.Plot,
+            language: movieData.Language,
+            awards: movieData.Awards,
+          };
+        })
+      );
       return movies;
     } else {
       throw new Error('No movies found');
@@ -27,6 +32,7 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (searchQ
     throw new Error('Failed to fetch movies');
   }
 });
+
 
 export const fetchMovieDetails = createAsyncThunk('movies/fetchMovieDetails', async (movieId) => {
   try {

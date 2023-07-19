@@ -34,7 +34,7 @@ const MovieCard = ({ movie }) => {
         </div>
       </div>
       <MovieDetailsSlider onClose={handleSliderClose} isOpen={isSliderOpen}>
-        {selectedMovie && <MovieDetails selectedMovie={selectedMovie} />}
+        {selectedMovie && <MovieDetails selectedMovie={selectedMovie} onClose={handleSliderClose} />}
       </MovieDetailsSlider>
     </>
   );
