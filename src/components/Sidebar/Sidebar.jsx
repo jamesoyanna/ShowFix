@@ -7,13 +7,11 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="logo">
-   
         <span className="logo-text">
         <Link to="/" className="logo-link">
-          Dev<span className="logo-hire">Hire</span>
+          Show<span className="logo-hire">Flix</span>
           </Link>
         </span>
-    
       </div>
       <div className="search-bar">
         <div className="search-input">
