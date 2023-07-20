@@ -5,8 +5,15 @@ import './searchbar.css';
 const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
   const handleSearch = () => {
     onSearch(searchQuery);
+  };
+
+  const handleKeyUp = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   const handleChange = (event) => {
@@ -42,7 +49,8 @@ const SearchBar = ({ onSearch }) => {
          <input
           type="text"
           value={searchQuery}
-          onChange={handleChange}
+         onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyUp={handleKeyUp}
           placeholder="Search"
           />
         </div>
@@ -51,23 +59,6 @@ const SearchBar = ({ onSearch }) => {
           </button>
         </div>
       )}
-    
-    
-{/*    
-    <div className="search-bar">
-      <div className="search-input">
-        <FiSearch className="search-icon" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleChange}
-          placeholder="Search"
-        />
-      </div>
-      <button className="search-button" onClick={handleSearch}>
-        Search
-      </button>
-    </div> */}
     </>
   );
 };
