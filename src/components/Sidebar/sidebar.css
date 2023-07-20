@@ -48,9 +48,10 @@
   margin-left: 12px;
   color: #ffffff;
   background-color: #5f2eea;
-  height: 24px;
-  width: 24px;
+  height: 19px;
+  width: 19px;
   border-radius: 8px;
+  padding: 6px;
 }
 
 .watchlist {
