@@ -1,37 +1,32 @@
-## ShowFix App
-
-## Description: 
+### ShowFlix App
 
 ### About Project
- ShowFix is a web application that allows users to browse and search for movies, view movie details, and discover similar movies based on their interests. The application is built using React and Redux, and it fetches movie data from the OMDb API.
+ ShowFlix is a web application that allows users to browse and search for movies, view movie details, and discover similar movies based on their interests. The application is built using React and Redux, and it fetches movie data from the OMDb API.
 
 ## Application Features
     - Search for movies by title or keyword.
 
-   -View movie details, including title, plot, release date, rating, and runtime.
+   - View movie details, including title, plot, release date, rating, and runtime.
 
    - Discover similar movies based on the selected movie.
 
 
-#### Live view of the application Demo can be VIEWED here- [ShowFix App](https://showfix.netlify.app/)
+#### Live view of the application Demo can be VIEWED here- [ShowFlix App](https://showfix.netlify.app/)
 
 
 ### Screenshots of the Application.
 
-Front page Desktop
+Front page Desktop View:
 
 ![frontpage](https://github.com/jamesoyanna/ShowFix/assets/26815113/c5f1e3af-8214-4ee7-8b87-85b528ee3203)
-
 
 
 Movie Details Slider View
 ![Movie Details Slider View](https://github.com/jamesoyanna/ShowFix/assets/26815113/e4315938-4742-4ce3-a2b3-4664404bac12)
 
 
-
 Movie Search Result View:
 ![Movie Search View](https://github.com/jamesoyanna/ShowFix/assets/26815113/3c42229a-eed5-47cd-8ba6-144e7a7cfcd7)
-
 
 
 Single Movie Page Details View:
@@ -80,7 +75,7 @@ The following tools are required to run this application:
 
 ### Getting the source code
 You can clone the repository directly here:
-git clone git@github.com:jamesoyanna/ShowFix.git
+git clone git@github.com:jamesoyanna/ShowFlix.git
 OR clicking on the code button ontop to clone the application.
 
 ### Installation
@@ -94,14 +89,14 @@ You should have Nodejs installed, and NPM to run this application .You can downl
 ## Install Npm Packages
 Upon clonning the application, to run it locally, you will have to install all the dependencies and packages. 
 
-Open your terminal and navigate into the ShowFix folder using the command:
+Open your terminal and navigate into the ShowFlix folder using the command:
 cd showfix
 
- Run yarn or npm install from the root of the showfix folder.
+ Run yarn or npm install from the root of the showflix folder.
 
 
 
-#### Running the showfix App
+#### Running the showflix App
 
   ``` 
 Run yarn start or npm start from the root of the client folder to start the development server. 
