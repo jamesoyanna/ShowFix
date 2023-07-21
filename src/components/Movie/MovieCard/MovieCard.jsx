@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MovieDetailsSlider from '../../Movie/MovieDetailsSlider/MovieDetailsSlider';
 import placeholderImage from '../../../images/mov.png';
@@ -9,35 +9,38 @@ import { useDispatch } from 'react-redux';
 import { fetchMovieDetails } from '../../../redux/actions/moviesActions';
 
 const MovieCard = ({ movie }) => {
-  const [isSliderOpen, setIsSliderOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const dispatch = useDispatch();
 
-  const handleSliderOpen = async () => {
-    setIsSliderOpen(true);
+  useEffect(() => {
+    if (selectedMovie) {
+      dispatch(fetchMovieDetails(selectedMovie.id));
+    }
+  }, [dispatch, selectedMovie]);
+
+  const handleSliderOpen = () => {
     setSelectedMovie(movie);
-    await dispatch(fetchMovieDetails(movie.id));
   };
 
   const handleSliderClose = () => {
-    setIsSliderOpen(false);
+    setSelectedMovie(null);
   };
 
-  const imageSource = movie.image ? movie.image : placeholderImage;
+  const imageSource = movie?.image || placeholderImage;
 
   return (
     <>
       <div className="movie-card">
         <div className="image-container">
-        <Link to={`/movie-page/${movie.id}`} className="movie-card-link">
-          <img src={imageSource} alt={movie.title} className="cover-image" />
+          <Link to={`/movie-page/${movie.id}`} className="movie-card-link">
+            <img src={imageSource} alt={movie.title} className="cover-image" />
           </Link>
           <button className="view-button" onClick={handleSliderOpen}>
             View
           </button>
         </div>
       </div>
-      <MovieDetailsSlider onClose={handleSliderClose} isOpen={isSliderOpen}>
+      <MovieDetailsSlider onClose={handleSliderClose} isOpen={Boolean(selectedMovie)}>
         {selectedMovie && <MovieDetails selectedMovie={selectedMovie} onClose={handleSliderClose} />}
       </MovieDetailsSlider>
     </>
