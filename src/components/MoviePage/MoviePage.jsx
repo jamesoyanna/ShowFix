@@ -25,9 +25,9 @@ const MoviePage = () => {
           <h3>{selectedMovie.title}</h3>
           <p>{selectedMovie.plot}</p>
           <div className="rating-time-row">
-          <p> <FaCalendarAlt />{selectedMovie.released}</p>
+          <p><FaClock />{selectedMovie.released}</p>
             <p className="rating"> <FaStar />{selectedMovie.rated}</p>
-            <p> <FaClock />{selectedMovie.runtime}</p>
+            <p> {selectedMovie.runtime}</p>
           </div>
           <div className="watch-button-container">
             <button className="watch-button">Watch Now</button>

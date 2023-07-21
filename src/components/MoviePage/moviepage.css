@@ -1,6 +1,8 @@
+/* moviepage.css */
 
 .movie-page-container {
     display: flex;
+    flex-wrap: wrap;
   }
   
   .movie-details {
@@ -15,6 +17,7 @@
   .movie-image {
     flex: 1;
     margin-right: 20px;
+    margin-bottom: 20px;
   }
   
   .movie-image img {
@@ -41,6 +44,7 @@
   .rating-time-row {
     display: flex;
     align-items: center;
+    margin-top: 10px;
   }
   
   .rating {
@@ -70,7 +74,6 @@
     display: inline-block;
     margin-left: 12px;
     margin-top: 49px;
-
   }
   
   .heart-icon {
@@ -80,11 +83,10 @@
   .watch-button-container {
     display: flex;
     align-items: center;
-    margin-top: 10px; 
+    margin-top: 10px;
   }
   
-  
-.rating-time-row {
+  .rating-time-row {
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -102,3 +104,31 @@
   .rating-time-row p svg {
     margin-right: 5px;
   }
+  
+  /* Media Queries for Mobile Responsive */
+  @media (max-width: 767px) {
+    .details-row {
+      flex-direction: column;
+    }
+  
+    .movie-image {
+      margin-right: 0;
+    }
+  
+    .movie-details {
+      padding: 10px;
+    }
+  
+    .heart-icon-container {
+      margin-top: 60px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .watch-button-container {
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 0;
+    }
+  }
+  

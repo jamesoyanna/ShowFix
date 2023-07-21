@@ -19,7 +19,7 @@ const Sidebar = () => {
           <input type="text" placeholder="Search" />
         </div>
       </div>
-      <Link to="/watchlist" className="watchlist">
+      <Link to="#" className="watchlist">
         <FiHeart className="watchlist-icon" />
         Watchlist
       </Link>
