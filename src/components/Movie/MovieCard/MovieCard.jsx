@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import MovieDetailsSlider from '../MovieDetailsSlider/MovieDetailsSlider';
-import placeholderImage from '../../images/mov.png';
+import MovieDetailsSlider from '../../Movie/MovieDetailsSlider/MovieDetailsSlider';
+import placeholderImage from '../../../images/mov.png';
 import './moviecard.css';
+
 import MovieDetails from '../MovieDetails/MovieDetails';
 import { useDispatch } from 'react-redux';
-import { fetchMovieDetails } from '../../actions/moviesActions';
+import { fetchMovieDetails } from '../../../redux/actions/moviesActions';
 
 const MovieCard = ({ movie }) => {
   const [isSliderOpen, setIsSliderOpen] = useState(false);

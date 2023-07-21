@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchMovies } from '../../actions/moviesActions';
-import Sidebar from '../Sidebar/Sidebar';
-import Dashboard from '../Dashboard/Dashboard';
+import { fetchMovies } from '../../redux/actions/moviesActions';
+import Sidebar from '../../components/common/Sidebar/Sidebar';
+import Dashboard from '../../components/Dashboard/Dashboard';
 import './home.css';
 
-const Home = () => {
+const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FaStar, FaClock } from 'react-icons/fa';
 import './moviepage.css';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../../components/common/Sidebar/Sidebar';
 import PlaceholderImage from '../../images/mov1.png';
-import SimilarMovies from '../SimilarMovies/SimilarMovies';
+import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
 const MoviePage = () => {
   const { id } = useParams();

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './redux/store';
 import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home/Home';
-import MovieDetails from './components/MovieDetails/MovieDetails';
-import MoviePage from './components/MoviePage/MoviePage';
+import Home from './containers/HomePage/HomePage';
+import MovieDetails from './components/Movie/MovieDetails/MovieDetails';
+import MoviePage from './containers/MoviePage/MoviePage';
 const App = () => {
   return (
     <Provider store={store}>
