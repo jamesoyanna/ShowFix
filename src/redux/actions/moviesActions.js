@@ -1,5 +1,3 @@
-// movies.js (or whatever your filename is)
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 const OMDB_BASE_URL = process.env.REACT_APP_OMDB_BASE_URL;

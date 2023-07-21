@@ -1,6 +1,7 @@
 import React from 'react';
 import './moviedetails.css';
 import { FaArrowLeft } from 'react-icons/fa';
+import placeholderImage from '../../../images/mov3.png';
 
 const MovieDetails = ({ selectedMovie, onClose }) => {
   const { image, title, plot } = selectedMovie || {};
@@ -12,7 +13,7 @@ const MovieDetails = ({ selectedMovie, onClose }) => {
       </div>
       <div className="movie-card">
         <div className="image-container">
-          <img src={image} alt={title} className="cover-image" />
+          <img src={image || placeholderImage} alt={title || 'No Title'} className="cover-image" />
         </div>
         <h2>{title}</h2>
         <p className="plot">{plot}</p>

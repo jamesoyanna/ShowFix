@@ -13,7 +13,6 @@ const MoviePage = () => {
   const [selectedMovie, setSelectedMovie] = useState(
     () => JSON.parse(localStorage.getItem('selectedMovie')) || null
   );
-  const imageSource = selectedMovie?.image || PlaceholderImage;
 
   useEffect(() => {
     localStorage.setItem('selectedMovie', JSON.stringify(selectedMovie));
@@ -26,6 +25,9 @@ const MoviePage = () => {
     }
   }, [id, movies]);
 
+  const { title, plot, released, rated, runtime, image } = selectedMovie || {};
+  const imageSource = image || PlaceholderImage;
+
   return (
     <>
       <div className="movie-page-container">
@@ -33,21 +35,21 @@ const MoviePage = () => {
         <div className="movie-details">
           <div className="details-row">
             <div className="movie-image">
-              <img src={imageSource} alt={selectedMovie?.title} />
+              <img src={imageSource} alt={title} />
             </div>
             <div className="info-container">
-              <h3>{selectedMovie?.title}</h3>
-              <p>{selectedMovie?.plot}</p>
+              <h3>{title}</h3>
+              <p>{plot}</p>
               <div className="rating-time-row">
                 <p>
                   <FaClock />
-                  {selectedMovie?.released}
+                  {released}
                 </p>
                 <p className="rating">
                   <FaStar />
-                  {selectedMovie?.rated}
+                  {rated}
                 </p>
-                <p>{selectedMovie?.runtime}</p>
+                <p>{runtime}</p>
               </div>
               <div className="watch-button-container">
                 <button className="watch-button">Watch Now</button>

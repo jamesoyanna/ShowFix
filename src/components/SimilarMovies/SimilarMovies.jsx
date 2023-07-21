@@ -3,12 +3,10 @@ import placeholderImage from '../../images/mov1.png';
 import './similarmovies.css';
 
 const SimilarMovies = ({ movie }) => {
-  const imageSource = movie.image ? movie.image : placeholderImage;
-
   return (
     <div className="similar-movie-card">
       <div className="similar-movie-container">
-        <img src={imageSource} alt={movie.title} className="similar-image" />
+        <img src={movie?.image || placeholderImage} alt={movie?.title || 'No Title'} className="similar-image" />
         <button className="similar-view-button">
           View
         </button>

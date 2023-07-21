@@ -6,8 +6,10 @@ import Dashboard from '../../components/Dashboard/Dashboard';
 import './home.css';
 
 const HomePage = () => {
+  // Dispatch function from react-redux
   const dispatch = useDispatch();
 
+  // Fetch movies on component mount
   useEffect(() => {
     dispatch(fetchMovies());
   }, [dispatch]);
