@@ -5,8 +5,6 @@ import './similarmovies.css';
 const SimilarMovies = ({ movie }) => {
   const imageSource = movie.image ? movie.image : placeholderImage;
 
-  console.log("Similar", movie);
-  
   return (
     <div className="similar-movie-card">
       <div className="similar-movie-container">

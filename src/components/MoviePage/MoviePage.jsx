@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FaStar, FaClock } from 'react-icons/fa';
@@ -10,8 +10,21 @@ import SimilarMovies from '../SimilarMovies/SimilarMovies';
 const MoviePage = () => {
   const { id } = useParams();
   const movies = useSelector((state) => state.movies);
-  const selectedMovie = movies.data.find((movie) => movie.id === id);
-  const imageSource = selectedMovie.image || PlaceholderImage;
+  const [selectedMovie, setSelectedMovie] = useState(
+    () => JSON.parse(localStorage.getItem('selectedMovie')) || null
+  );
+  const imageSource = selectedMovie?.image || PlaceholderImage;
+
+  useEffect(() => {
+    localStorage.setItem('selectedMovie', JSON.stringify(selectedMovie));
+  }, [selectedMovie]);
+
+  useEffect(() => {
+    const foundMovie = movies.data.find((movie) => movie.id === id);
+    if (foundMovie) {
+      setSelectedMovie(foundMovie);
+    }
+  }, [id, movies]);
 
   return (
     <>
@@ -20,21 +33,21 @@ const MoviePage = () => {
         <div className="movie-details">
           <div className="details-row">
             <div className="movie-image">
-              <img src={imageSource} alt={selectedMovie.title} />
+              <img src={imageSource} alt={selectedMovie?.title} />
             </div>
             <div className="info-container">
-              <h3>{selectedMovie.title}</h3>
-              <p>{selectedMovie.plot}</p>
+              <h3>{selectedMovie?.title}</h3>
+              <p>{selectedMovie?.plot}</p>
               <div className="rating-time-row">
                 <p>
                   <FaClock />
-                  {selectedMovie.released}
+                  {selectedMovie?.released}
                 </p>
                 <p className="rating">
                   <FaStar />
-                  {selectedMovie.rated}
+                  {selectedMovie?.rated}
                 </p>
-                <p>{selectedMovie.runtime}</p>
+                <p>{selectedMovie?.runtime}</p>
               </div>
               <div className="watch-button-container">
                 <button className="watch-button">Watch Now</button>
