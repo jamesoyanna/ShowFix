@@ -1,4 +1,6 @@
-.movie-card {
+/* similarmovies.css */
+
+.similar-movie-card {
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 20px;
@@ -6,23 +8,24 @@
   box-sizing: border-box;
 }
 
-.image-container {
+.similar-movie-container {
   position: relative;
   width: 100%;
   padding-top: 150%;
   overflow: hidden;
 }
 
-.cover-image {
+.similar-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
-.view-button {
+.similar-view-button {
   position: absolute;
   bottom: 23px;
   left: 50%;
@@ -41,6 +44,13 @@
   text-decoration: none;
 }
 
-.view-button:hover {
+.similar-view-button:hover {
   background-color: #c3c5d3;
+}
+
+/* Additional CSS for resizing the images in the grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
 }
