@@ -72,6 +72,6 @@
 /* Mobile-only styles */
 @media (max-width: 767px) {
   .sidebar {
-    display: none; /* Hide the sidebar on mobile view */
+    display: none;
   }
 }

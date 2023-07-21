@@ -7,22 +7,18 @@ import SearchBar from '../SearchBar/SearchBar';
 import './dashboard.css';
 
 const Dashboard = () => {
-  const movies = useSelector((state) => state.movies);
+  const { data: movieList, isLoading, error } = useSelector((state) => state.movies);
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-  useEffect(() => {
-    if (searchQuery.trim() === '') {
-      dispatch(fetchMovies());
-    } else {
-      dispatch(fetchMovies(searchQuery));
-    }
-  }, [dispatch, searchQuery]);
-
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
+
+  useEffect(() => {
+    dispatch(fetchMovies(searchQuery || undefined));
+  }, [dispatch, searchQuery]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +34,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {isMobile && (
+      {isMobile ? (
         <div className="logo">
           <span className="logo-text">
             <Link to="/" className="logo-link">
@@ -46,18 +42,18 @@ const Dashboard = () => {
             </Link>
           </span>
         </div>
-      )}
+      ) : null}
       <h1 className="heading">Explore</h1>
       <SearchBar onSearch={handleSearch} />
       <p className="title">Results for <span className='heading-inner'>{searchQuery || 'All Movies'}</span></p>
       <div className="movie-list">
-        {movies.loading ? (
+        {isLoading ? (
           <p>Loading...</p>
-        ) : movies.error ? (
-          <p>Error: {movies.error}</p>
+        ) : error ? (
+          <p>Error: {error}</p>
         ) : (
           <>
-            {movies.data.map((movie) => (
+            {movieList?.map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
           </>
