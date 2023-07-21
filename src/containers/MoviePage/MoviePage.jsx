@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { FaStar, FaClock } from 'react-icons/fa';
 import './moviepage.css';
 import Sidebar from '../../components/common/Sidebar/Sidebar';
@@ -13,6 +13,7 @@ const MoviePage = () => {
   const [selectedMovie, setSelectedMovie] = useState(
     () => JSON.parse(localStorage.getItem('selectedMovie')) || null
   );
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
   useEffect(() => {
     localStorage.setItem('selectedMovie', JSON.stringify(selectedMovie));
@@ -25,12 +26,33 @@ const MoviePage = () => {
     }
   }, [id, movies]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const { title, plot, released, rated, runtime, image } = selectedMovie || {};
   const imageSource = image || PlaceholderImage;
 
   return (
     <>
       <div className="movie-page-container">
+      {isMobile ? (
+        <div className="logo">
+          <span className="logo-text">
+            <Link to="/" className="logo-link">
+              Show<span className="logo-hire">Flix</span>
+            </Link>
+          </span>
+        </div>
+      ) : null}
         <Sidebar />
         <div className="movie-details">
           <div className="details-row">
