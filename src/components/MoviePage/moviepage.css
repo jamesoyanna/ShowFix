@@ -1,0 +1,75 @@
+/* moviepage.css */
+
+.movie-page-container {
+    display: flex;
+  }
+  
+  .movie-details {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .details-row {
+    display: flex;
+  }
+  
+  .image-container {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .info-container {
+    flex: 2;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .rating-time-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .rating {
+    color: #5F2EEA;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .watch-button {
+    background-color: #5F2EEA;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+  
+  .heart-icon-container {
+    background-color: #D9DBE9;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .heart-icon {
+    color: #5F2EEA;
+  }
+  
