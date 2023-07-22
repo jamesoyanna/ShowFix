@@ -49,6 +49,77 @@ Mobile View:
 - [Authors](#authors)
 - [License](#license)
 
+
+
+ ## Project Folder structure.
+
+```
+	showfix
+	├── public
+	│   ├── favicon.ico
+	│   ├── index.html
+	│   └── manifest.json
+	└── src
+	      └── components
+		           ├──common
+                     Sidebar
+			                 ├── sidebar.css
+				               ├── Sidebar.jsx
+			 ├──     ├──Dashboard
+			                 ├── Dashboard.jsx
+                       ├── dashboard.css
+			 ├──     ├──Movie   
+                   ├──MovieCard
+                        ├── MovieCard.jsx
+				                ├── moviecard.css
+
+				           ├──MovieDetails
+			                  ├── CategoryDisplay.js
+				                ├── categoryDisplay.css
+
+                   ├──MovieDetailsSlider
+			                  ├── MovieDetailsSlider.jsx
+				                ├── moviedetailsslider.css
+			         ├──SearchBar
+			                  ├── Searchbar.jsx
+				                ├── searchbar.css
+			         ├── SimilarMovies
+			                  ├── SimilarMovies.jsx
+				                ├── similarmovies.css
+              
+        ├── containers
+               ├── Homepage
+                      ├── HomePage.jsx
+				              ├──home.css
+			         ├── MoviePage
+                      ├── MoviePage.jsx
+				              ├── moviepage.css
+            
+				├--images
+              ├
+        redux
+          ├── actions
+			    ├── reducers
+          ├── store.js
+			  ├
+        util
+          ├── api.js
+          ├── apiConfig.js
+		  
+		└── App.js
+		└── App.css
+		└── index.css
+		        └── index.js
+    └── .env
+    ├── .gitignore
+	  ├── package.json
+	  ├──README.md
+
+```
+
+
+
+
 ## Getting Started
 
 #### Dependencies
