@@ -1,33 +1,37 @@
+/* home.css */
+
 .home-container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+}
+
+/* Dashboard */
+.dashboard {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; 
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media screen and (min-width: 769px) {
+  .home-container {
     flex-direction: row;
   }
-  
-  /* Dashboard */
+
   .dashboard {
-    flex: 1;
-    padding: 20px;
+    order: 2;
+    height: 100%; 
   }
-  
-  .heading {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  .movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .home-container {
-      flex-direction: column;
-    }
-  
-    .dashboard {
-      order: -1;
-    }
-  }
-  
+}

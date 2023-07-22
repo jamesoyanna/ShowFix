@@ -30,6 +30,9 @@
     justify-content: center;
     padding: 10px;
   }
+  .heading{
+    margin-top: 40px;
+  }
 
   .logo-text {
     font-size: 34px;
