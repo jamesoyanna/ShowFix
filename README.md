@@ -52,7 +52,6 @@ Mobile View:
 ## Getting Started
 
 #### Dependencies
-##### Client Side
 
 The project is built with;
 * [React JS](https://beta.reactjs.org/) -Library for building user interfaces
@@ -89,28 +88,27 @@ You should have Nodejs installed, and NPM to run this application .You can downl
 ## Install Npm Packages
 Upon clonning the application, to run it locally, you will have to install all the dependencies and packages. 
 
-Open your terminal and navigate into the ShowFlix folder using the command:
-cd showfix
-
- Run yarn or npm install from the root of the showflix folder.
-
-
-
-#### Running the showflix App
-
-  ``` 
-Run yarn start or npm start from the root of the client folder to start the development server. 
-Go to http://localhost:3000 on your browser. Your app should be running.
-
-The app will automatically reload if you make changes to any of the source files.
-  ```
-
-
-Environment Variables:
+### Add Environment Variables:
 Add your environment variables
 REACT_APP_OMDB_BASE_URL='https://www.omdbapi.com'
 
 REACT_APP_OMDB_API_KEY='your-api-key'
+
+Open your terminal and navigate into the ShowFlix folder using the command:
+cd showfix
+
+ Run yarn or npm install from the root of the ShowFlix folder.
+
+
+
+#### Running the ShowFlix App
+
+  ``` 
+Run yarn start or npm start from the root of the ShowFlix folder to start the development server. 
+Go to http://localhost:3000 on your browser. Your app should be running.
+
+The app will automatically reload if you make changes to any of the source files.
+  ```
 
 
 ## About Me 
